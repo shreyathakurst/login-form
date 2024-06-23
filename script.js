@@ -1,92 +1,74 @@
-document.getElementById('myForm').addEventListener('Submit', function(event){
+document.getElementById('myForm').addEventListener('submit', function (event) {
 
-  //prevent the form from submitting
+  // Prevent the form from submitting
   event.preventDefault();
 
-  let hasError = false;
+  var hasError = false;
 
-  const firstnameInput = document.getElementById('firstName'); 
-  const lastnameInput = document.getElementById('lastName'); 
-  const emailInput = document.getElementById('email');
-  const queries = document.querySelectorAll('input[name = "queryType"]');
-  const messageInput = document.getElementById('Input-Types-message');
-  const consentInput = document.getElementById('checkbox');
-
-
-  const firstnameError = document.getElementById('FirstName-error'); 
-  const lastnameError = document.getElementById('LastName-error'); 
-  const emailError = document.getElementById('emailError');
-  const queryError = document.getElementById('queryError');
-  const messageError = document.getElementById('messageError');
-  const consentError = document.getElementById('consentError');
-
-  //validate first Name
-  if(firstnameInput.ariaValueMax.trim() === ''){
-    firstnameInput.classList.add('error');
-    firstnameError.style.display = 'block';
-    hasError = 'true';
-  } else{
-    firstnameInput.classList.remove('error');
-    firstnameError.style.display = 'none';
-  }
-
-  //validate Last Name
-  if(lastnameInput.ariaValueMax.trim() === ''){
-    lastnameInput.classList.add('error');
-    lastnameError.style.display = 'block';
-    hasError = 'true';
-  } else{
-    lastnameInput.classList.remove('error');
-    lastnameError.style.display = 'none';
-  }
-
-  //validate email
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!emailPattern.test(emailInput.value.trim())){
-    emailInput.classList.add('error');
-    emailError.style.display = 'block';
+  // Validate first name
+  if (document.getElementById('firstName').value.trim() === '') {
+    document.getElementById('firstName').classList.add('error');
+    document.getElementById('FirstName-error').style.display = 'block';
     hasError = true;
-  }else{
-    emailInput.classList.remove('error');
-    emailError.style.display = 'none';
+  } else {
+    document.getElementById('firstName').classList.remove('error');
+    document.getElementById('FirstName-error').style.display = 'none';
   }
 
-  //validate query
-  const isQuerySelected = Array.from(queries).some(radio=>radio.checked);
-
-  if(!isQuerySelected){
-    queryError.style.display = 'block';
-    hasError = 'true';
-  }else{
-    queryError.style.display = 'none';
-  }
-
-  //validate message input
-  if(messageInput.ariaValueMax.trim() === ''){
-    messageInput.classList.add('error');
-    messageError.style.display = 'block';
-    hasError = 'true';
-  } else{
-    messageInput.classList.remove('error');
-    messageError.style.display = 'none';
-  }
-  
-  //validate consent
-  if(!consentInput.checked){
-    consentError.style.display = 'block';
+  // Validate last name
+  if (document.getElementById('lastName').value.trim() === '') {
+    document.getElementById('lastName').classList.add('error');
+    document.getElementById('LastName-error').style.display = 'block';
     hasError = true;
-  }else{
-    consentError.style.display = 'none';
+  } else {
+    document.getElementById('lastName').classList.remove('error');
+    document.getElementById('LastName-error').style.display = 'none';
   }
 
-
-  if(!hasError){
-    //no error, so submit
-    alert('form submitted');
+  // Validate email
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(document.getElementById('email').value.trim())) {
+    document.getElementById('email').classList.add('error');
+    document.getElementById('emailError').style.display = 'block';
+    hasError = true;
+  } else {
+    document.getElementById('email').classList.remove('error');
+    document.getElementById('emailError').style.display = 'none';
   }
 
-  
+  // Validate query
+  var isQuerySelected = Array.prototype.some.call(document.querySelectorAll('input[name="queryType"]'), function (radio) {
+    return radio.checked;
+  });
+
+  if (!isQuerySelected) {
+    document.getElementById('queryError').style.display = 'block';
+    hasError = true;
+  } else {
+    document.getElementById('queryError').style.display = 'none';
+  }
+
+  // Validate message input
+  if (document.getElementById('Input-Types-message').value.trim() === '') {
+    document.getElementById('Input-Types-message').classList.add('error');
+    document.getElementById('messageError').style.display = 'block';
+    hasError = true;
+  } else {
+    document.getElementById('Input-Types-message').classList.remove('error');
+    document.getElementById('messageError').style.display = 'none';
+  }
+
+  // Validate consent
+  if (!document.getElementById('checkbox').checked) {
+    document.getElementById('consentError').style.display = 'block';
+    hasError = true;
+  } else {
+    document.getElementById('consentError').style.display = 'none';
+  }
+
+  if (!hasError) {
+    // No error, so submit
+    alert('Form submitted successfully!');
+  }
 
 });
-
-// console.log('dbhv');
