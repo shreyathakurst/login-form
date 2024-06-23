@@ -1,0 +1,220 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+body{
+  background-color: hsl(148, 38%, 91%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Karla;
+  font-size : 16px;
+  
+}
+
+.main{
+  background-color: white;
+  width: 700px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.form-group{
+  /* background-color: grey; */
+  position: absolute;
+  padding: 10px;
+  width: 650px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Contact{
+  /* background-color: blue; */
+  position: absolute;
+  left: 10px;
+  top: -50px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.All-Info{
+  /* background-color: blueviolet; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  grid-template-rows: 1fr 1fr;
+  top: 50px;
+  font-weight: 400;
+  
+}
+
+.Name{
+  /* background-color: lightblue; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: -30px;
+  margin-bottom: -8px;
+}
+ 
+.First-Name{
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  width: 47.5%;
+  margin: 10px 0px 10px 10px;
+  height: 60px;
+}
+
+.Last-Name{
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 10px 0px;
+  width: 48%; 
+}
+
+.Email,.Query, .Message{
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.Query-Inputs{
+  display: flex;
+  
+}
+
+#radio1{
+  /* background-color: lightyellow; */
+  display: inline-block;
+  /* position: absolute; */
+  margin-top: 10px;
+  width: 50%;
+  height: 35px;
+  border: solid;
+  border-width: 0.1px;
+  border-color: rgb(203, 201, 201);
+  border-radius: 5px;
+}
+
+.radio1-text{
+   /* background: pink; */
+   margin-left: 30px;
+   margin-top: 9px;
+   display: flex;
+}
+
+#radio2{
+  /* background-color: lightyellow; */
+  display: inline-block;
+  /* position: absolute; */
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50%;
+  height: 35px;
+  border: solid;
+  border-width: 0.1px;
+  border-color: rgb(203, 201, 201);
+  border-radius: 5px;
+  /* color: rgb(203, 201, 201); */
+}
+
+#text1{
+  /* background-color: lightpink; */
+  position: absolute;
+  height: 30px;
+  width: 22px;  
+ 
+}
+
+#text2{
+  /* background-color: lightpink; */
+  position: absolute;
+  height: 30px;
+  width: 25px;  
+  left: 120;
+}
+
+.radio2-text{
+  /* background: pink; */
+  margin-left: 34px;
+  margin-top: 9px;
+  display: flex;
+}
+
+.Input-Types{
+  border: solid;
+  background: none;
+  border-width: 0.1px;
+  border-color:  rgb(203, 201, 201);
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.Message-Class{
+  /* background-color: pink; */
+  border: solid;
+  /* background: none; */
+  border-width: 0.1px;
+  border-color:  rgb(203, 201, 201);
+  border-radius: 5px;
+  height: 3000px;
+  margin-top: 5px;
+  padding: 30px;
+}
+
+.consent-label{
+  /* background-color: red; */
+  width: 650px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px; 
+  padding-top: 40px;  
+}
+
+.consent-box{
+  /* background-color: pink; */
+  padding-left: 15px;
+}
+
+.Submit-button{
+  
+  height: 40px; 
+  padding: 10px 20px; 
+  background-color: hsl(169, 82%, 27%);
+  margin-top: 40px;
+  color: #fff; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+/* errors */
+input.error{
+  border-color: hsl(0, 66%, 54%);
+}
+
+.error-message{
+  color: hsl(0, 66%, 54%);
+  display: none;
+  margin-top: 5px;
+}
+
