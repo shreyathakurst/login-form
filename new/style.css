@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
-*{
-  font-family: Karla;
-  font-size: 16px;
-}
-
 body{
   background-color: hsl(148, 38%, 91%);
   display: flex;
@@ -18,13 +13,13 @@ body{
 #myForm{
   background-color: white;
   padding : 20px;
-  /* width: 70%; */
-  /* height: 85%; */
+  line-height: 50px;
+  /* margin-bottom: 5px; */
 }
 
 .name{
   /* background-color: pink; */
-  /* display: flex; */
+  display: flex;
   width: 100%;
   gap: 10px; 
   line-height: 50px;
@@ -35,11 +30,10 @@ body{
   display: block;
   flex: 1; 
   width: 100%;
- 
+  line-height: 50px;
   }
 
   .inputTypes, #query_button{
-    /* background-color: pink; */
     border: solid;
     background: none;
     border-width: 0.1px;
@@ -47,7 +41,6 @@ body{
     border-radius: 5px;
     height: 30px;
     margin-top: 5px;
-    margin-bottom: 30px;
   }
 
   .inputTypes:hover, #query_button:hover, #inputMessage:hover{
@@ -66,25 +59,24 @@ body{
     flex-direction: row;
     width: 100%;
     gap: 10px;
-    
+    line-height: 50px;
   }
 
   #query_button{
     width: 100%;
-    /* background-color: pink; */
   }
 
-  .consent-box{
-    /* background-color: yellow; */
-    padding: 15px 15px 15px 0px;
-  }
+  /* .text{
+    background: pink;
+    
+  } */
 
   #inputMessage{
     border: solid;
     background: none;
     border-width: 0.1px;
     border-color:  rgb(203, 201, 201);
-    border-radius: 5px;  
+    border-radius: 5px;
   }
 
   
@@ -112,10 +104,9 @@ input.error{
 }
 
 .error-message{
-  background-color: yellow;
   color: hsl(0, 66%, 54%);
   display: none;
-  margin-top: px;
+  margin-top: 5px;
 }
 
 /* Alert box styling */
@@ -153,25 +144,6 @@ img{
   /* background-color: pink; */
   position: absolute;
   top: 15px;
-}
-
-/* responsive  */
-@media only screen and (max-width = 375px) {
-  /* .name{
-    display: block;
-  }
-
-  #firstName, #lastName, #email, #inputMessage{
-    display: block;
-  } */
-   
-  .query{
-    display: flex;
-    flex-direction: column;
-  }
-
-
-
 }
 
 

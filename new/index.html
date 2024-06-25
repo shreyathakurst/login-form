@@ -29,28 +29,27 @@
       </div>
 
       <!-- Query  -->
-       <div>Query Type*</div>
+       <div>Query *</div>
 
        <!-- radio buttons  -->
         <div class="query">
         <div id="query_button">
         <input type="radio" name="queryType" value="generalEnquiry" id="radioButton1">
         <label class="text" for="radioButton1">General Enquiry</label>
-        <span class="error-message" id="queryError">Please select a query type</span>
         </div>
-        
 
         <div id="query_button">
         <input type="radio" name="queryType" value="supportRequest" id="radioButton2">
         <label class="text" for="radioButton2">Support Request</label>
+
+        <span class="error-message" id="queryError">Please select a query type</span>
         </div>
-        
       </div>
 
         <!-- message  -->
          <div class="message">
          <label for="inputMessage">Message *</label>
-         <textarea name="message" id="inputMessage" rows="4"></textarea>
+         <textarea name="message" id="inputMessage" rows="2"></textarea>
 
          <span class="error-message" id="messageError">This field is required</span>
          </div>
