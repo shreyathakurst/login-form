@@ -1,13 +1,24 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-  // Prevent the form from submitting
-  event.preventDefault();
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+  import { getDatabase,
+    ref,
+     push} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
 
-  let hasError = false;
+  const firebaseConfig = {
+      databaseURL: `${import.meta.env.VITE_APP_DATABASEURL}`
+  };
+
+
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app)
+  console.log(database) 
+  const referenceInDB = ref(database, "inputs")
 
   const firstnameInput = document.getElementById('firstName');
   const lastnameInput = document.getElementById('lastName');
   const emailInput = document.getElementById('email');
   const queries = document.querySelectorAll('input[name="queryType"]');
+  // console.log(queries[0].value);
   const messageInput = document.getElementById('inputMessage');
   const consentInput = document.getElementById('checkbox');
 
@@ -17,6 +28,15 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
   const queryError = document.getElementById('queryError');
   const messageError = document.getElementById('messageError');
   const consentError = document.getElementById('consentError');
+
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  // Prevent the form from submitting
+  event.preventDefault();
+
+  let hasError = false;
+
+ 
 
   // Validate first name
   if (firstnameInput.value.trim() === '') {
@@ -78,10 +98,17 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 
   if (!hasError) {
     // No error, so submit
-    console.log('Name: ' + firstnameInput.value + ' ' + lastnameInput.value);
-    console.log('Email Address: ' + emailInput.value);
-    console.log('Query Type: ' + Array.from(queries).some(radio => radio.checked));
-    console.log('Message: ' + messageInput.value);
+
+    const person = {
+      name : firstnameInput.value + lastnameInput.value,
+      email: emailInput.value,
+      queryType: queries[0].checked ? queries[0].value : queries[1].value,
+      message: messageInput.value
+    }
+    console.log(queries[0].value)
+
+    push(referenceInDB, person);
+   
 
     
     // Show alert box
@@ -93,6 +120,8 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 
   }
 });
+
+
 
 
 
